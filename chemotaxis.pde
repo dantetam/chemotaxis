@@ -13,6 +13,7 @@ void setup()
     Food f = new Food((float)(width*Math.random()),(float)(height*Math.random()));
     food[i] = f;
   }
+  strokeWeight(3);
 }
 
 void draw()
@@ -30,6 +31,9 @@ void draw()
       {
         if (dist(b.posX, b.posY, food[j].posX, food[j].posY) < 20)
         {
+          stroke(0);
+          line(b.posX, b.posY, food[j].posX, food[j].posY);
+          noStroke();
           b.size += 5;
           if (b.size > 15) b.size = 15;
           Food f = new Food((float)(width*Math.random()),(float)(height*Math.random()));
